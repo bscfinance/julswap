@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KORE Vault</title>
+    <link rel="shortcut icon" type="image/ico" href="images/icon.ico">
+    <meta name="description" content="KORE Vault - Farm without inflation">
+    <meta name="keywords" content="kore,vault,yield,finance,defi,ethereum">
+
+    <script src="dist/jquery-3.4.1.min.js"></script>
+    <script src="dist/tuicss.min.js"></script>
+    <link rel="stylesheet" href="dist/tuicss.min.css">
+</head>
+
+<body class="tui-bg-blue-black">
+    <div class="tui-screen-1024-768 centered bordered white-168">
+        <div class="tui-panel cyan-168 full-width black-255-text tui-no-shadow center">
+            <!-- Focused -->
+            <button id="walletconnect" onclick="connect()" class="tui-button white-text tui-no-shadow" autofocus>Connect Wallet</button>
+        </div>
+        <div class="tui-tabs">
+            <ul>
+                <li><a class="tui-tab active" data-tab-content="tab-1-content">$KORE</a></li>
+                <li><a class="tui-tab" data-tab-content="tab-2-content">KVaults</a></li>
+                <li><a class="tui-tab" data-tab-content="tab-3-content">KZap</a></li>
+                <li><a class="tui-tab" data-tab-content="tab-4-content">KPools</a></li>
+                <li><a class="tui-tab" data-tab-content="tab-5-content">LGE</a></li>
+                <li><a class="tui-tab" data-tab-content="tab-6-content">Governance</a></li>
+            </ul>
+        </div>
+
+        <div class="tui-tab-content tui-content" id="tab-1-content">
+          <div class="tui-window" style="margin: 10px;">
+            <fieldset class="tui-fieldset">
+              <legend class="center">Summary</legend>
+
+              <legend class="center">$KORE</legend>
+              <br>Total Supply........: [<span>10000</span>]
+              <br>
+              <br>Locked Supply.......: [<span id="kore-locked">0.00000</span>]
+              <br>
+              <br>Wallet..............: [<span id="kore-wallet-balance">0.00000</span>]
+              <a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0xa866f0198208eb07c83081d5136be7f775c2399e" target="_blank"><button class="tui-button">GET</button></a>
+              <br>
+              <br>Claimable...........: [<span id="kore-claimable-balance">0.00000</span>]
+              <br><br>
+
+              <hr class="tui-divider"></hr>   <!-- With space -->
+
+              <br>
+              <legend class="center">$KORE-$ETH LP</legend>
+              <br>Total...............: [<span id="lp-total-supply">0.00000</span>]
+              <br>
+              <br>Wallet..............: [<span id="lp-wallet-balance">0.00000</span>]
+              <button class="tui-button"><a style="padding: 0px; color: #000;" class="tui-tab" data-tab-content="tab-3-content">GET</a></button>
+              <br>
+              <br>Staked..............: [<span id="lp-staked">0.00000</span>]
+              <br><br>
+            </fieldset>
+          </div>
+          <p style="margin: 10px;" class="nq-notice warning" id="warning"></p>
+        </div>
+
+        <div class="tui-tab-content tui-content" id="tab-2-content">
+          <table class="tui-table-grid">
+              <tbody>
+                  <tr>
+                      <td rowspan="2" width="60%" class="blue-168-text">
+                        <div class="tui-window" style="margin: 10px;">
+                          <fieldset class="tui-fieldset">
+                            <legend class="center">KORE-ETH LP Vault V2</legend>
+                            <br>APY %...............: [<span id="apyLP-v2">0.000</span>]
+                            <br>
+                            <br>Total Staked LP.....: [<span id="total-lp-locked-v2">0.00000</span>]
+                            <br>
+                            <br>Your Staked LP......: [<span id="stakedLP-v2">0.00000</span>]
+                            <br>
+                            <br>Your Unstaked LP....: [<span id="unstakedLP">0.00000</span>]
+                            <br>
+                            <br>Tokens Claimable....: [<span id="tokens-claimable-v2">0.00000</span>]
+                            <br><br>
+                            <hr class="tui-divider"></hr>   <!-- With space -->
+
+                            <!-- CONTRIBUTE -->
+                            <div>
+                              <br>Amount In LP........: <input type="text" id="LPamount-v2" class="tui-input white-168 black-text" value="0.00" style="width: 135px" />
+                              <br><br>
+                              <button id="stakeLPbutton-v2" onclick="stakeLPV2()" class="tui-button center">STAKE</button>
+                              <button id="withdrawLPbutton-v2" onclick="withdrawLPV2()" class="tui-button center">WITHDRAW</button>
+                              <br><br>
+                              <button id="stakeAllLPbutton-v2" onclick="stakeAllLPV2()" class="tui-button center">STAKE ALL</button>
+                              <button id="withdrawAllLPbutton-v2" onclick="withdrawAllLPV2()" class="tui-button center">WITHDRAW ALL</button>
+                              <button style="background-color: #ff00ff;" id="claimLPbutton-v2" onclick="claimLPV2()" class="tui-button center white-text">CLAIM</button>
+                            </div>
+
+                            <br>
+                            <hr class="tui-divider"></hr>   <!-- With space -->
+                            <div class="center">
+                              <br>
+                              <button class="tui-button"><a style="padding: 0px; color: #000;" class="tui-tab" data-tab-content="tab-3-content">Get LP and Stake with One Click</a></button>
+                              <br><br>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </td>
+                      <td width="40%" class="center">
+                        KVaults - Deflationary Farming
+                      </td>
+                  </tr>
+                  <tr>
+                      <td width="25" height="650px">
+                          <p>KVaults earn their APY from a 1.5% fee from all sell orders and transactions made with KORE. This includes all trading volume of DEXs and any transaction on the blockchain.</p>
+                          <p>APY is calculated by the LP value; ETH price and KORE price and the trading volume - the more trading, the more profit KVault receives to share amongst the stakers.</p>
+                      </td>
+                  </tr>
+               </tbody>
+           </table>
+        </div>
+
+        <div class="tui-tab-content tui-content" id="tab-3-content">
+          <table class="tui-table-grid">
+              <tbody>
+                  <tr>
+                      <td rowspan="2" width="60%" class="blue-168-text">
+                          <div class="tui-window" style="margin: 10px;">
+                            <fieldset class="tui-fieldset">
+                              <legend class="center">$ETH -> $KORE-$ETH LP</legend>
+                              <div>
+                                <br>Amount In ETH.......: <input type="text" id="zap-eth-amount" class="tui-input white-168 black-text" onchange="getZapEstimate(document.getElementById('zap-eth-amount').value)" value="0.00000" style="width: 135px" />
+                                <button class="tui-button" onclick="zapMax()">MAX</button>
+                                <br><br>
+                                <p>-> estimated <span id="zap-lp-estimate">0.00000</span> LP</p>
+                                <br>
+                                <label class="tui-checkbox"> Auto Stake in Vault
+                                    <input onclick="autoStakeOnZap = !autoStakeOnZap" type="checkbox" checked />
+                                    <span></span>
+                                </label>
+                                <br>
+                                <div class="center">
+                                  <button id="zap-lp" onclick="zap()" class="tui-button">ZAP ETH TO LP</button>
+                                </div>
+                                <br>
+                              </div>
+                            </fieldset>
+                          </div>
+                      </td>
+                      <td width="40%" class="center">
+                        KZap ETH > KORE/ETH LP
+                      </td>
+                    </tr>
+                    <tr>
+                        <td width="25" height="650px">
+                            <p>This is a dApp that will convert half your ETH deposited into KORE. Then create LP tokens for you, and deposit it into the KVault to start earning KORE.</p>
+                            <p>It’s pretty neat - saving you time and gas. Please be aware that once you KZap your ETH into the LP tokens, you will not be about to unlock it.</p>
+                            <p>You are able to withdraw your LP tokens from the KVault. You will be able to sell them on Balancer and Uniswap provided there is liquidity available.</p>
+                        </td>
+                    </tr>
+                 </tbody>
+             </table>
+        </div>
+
+        <div class="tui-tab-content tui-content" id="tab-4-content">
+          <table class="tui-table-grid">
+              <tbody>
+                  <tr>
+                      <td rowspan="2" width="60%" class="blue-168-text">
+                        <div class="tui-window" style="margin: 10px;">
+                          <fieldset class="tui-fieldset no-legend">
+                            Coming Soon
+                          </fieldset>
+                        </div>
+                      </td>
+                      <td width="40%" class="center">
+                        KPools - 0% IL, Profit Strategy Pools
+                      </td>
+                  </tr>
+                  <tr>
+                      <td width="25" height="650px">
+                          <p>KPools provide a variety of profit strategy pools to earn interest. When you stake your tokens in the KPools you will earn the deflationary asset $KORE.</p>
+                          <p>The KPools will utilise the interest earned to constantly buy KORE from the market. By staking in the KPools you are providing buy pressure on the token you are earning.</p>
+                      </td>
+                  </tr>
+               </tbody>
+           </table>
+        </div>
+
+        <div class="tui-tab-content tui-content" id="tab-5-content">
+            <table class="tui-table-grid">
+                <tbody>
+                    <tr>
+                        <td rowspan="2" width="60%" class="blue-168-text">
+                            <div class="tui-window">
+                                <fieldset class="tui-fieldset">
+                                  <legend class="center">KORE-ETH LGE</legend>
+                                  <br>Time Remaining......: [<span id="countdown">00:00:00:00</span>]
+                                  <br>
+                                  <br>Total $KORE Supply..: [<span>10000</span>]
+                                  <br>
+                                  <br>ETH Deposited.......: [<span id="total-deposit">0.00000</span>]
+                                  <br>
+                                  <br>Your Contribution...: [<span id="your-deposit">0.00000</span>]
+                                  <br>Contribution in %...: [<span id="your-deposit-percent">0.000</span>]
+
+                                  <br><br>
+                                  <hr class="tui-divider"></hr>   <!-- With space -->
+
+                                  <!-- CONTRIBUTE -->
+                                  <div id="contribute">
+                                    <legend class="center">Lock ETH</legend>
+                                    <label class="tui-radio"> 1 ETH
+                                        <input onclick="getElementById('amount').value = '1'" type="radio" name="group"/>
+                                        <span></span>
+                                    </label>
+                                    <label class="tui-radio"> 5 ETH
+                                        <input onclick="getElementById('amount').value = '5'" type="radio" name="group"/>
+                                        <span></span>
+                                    </label>
+                                    <label class="tui-radio"> 10 ETH
+                                        <input onclick="getElementById('amount').value = '10'" type="radio" name="group"/>
+                                        <span></span>
+                                    </label>
+                                    <label class="tui-radio"> 100 ETH
+                                        <input onclick="getElementById('amount').value = '100'" type="radio" name="group"/>
+                                        <span></span>
+                                    </label>
+                                    <label class="tui-radio"> Max
+                                        <input onclick="getElementById('amount').value = web3.utils.fromWei(balance, 'ether')-0.01" type="radio" name="group"/>
+                                        <span></span>
+                                    </label>
+                                    <br>Amount In ETH.......: <input type="text" onchange="if(!parseFloat(getElementById('amount').value)){getElementById('amount').value = '0'}" id="amount" class="tui-input white-168 black-text" value="0.00" style="width: 135px" />
+                                    <br><br>
+                                    <!-- Custom Color -->
+                                    <button id="deposit" onclick="deposit()" class="tui-button center">DEPOSIT</button>
+                                  </div>
+
+                                  <!-- CLAIM LP -->
+                                  <div id="claim-lp" class="center" style="display: none;">
+                                    <legend class="center">Claim LP Token</legend>
+                                    <br>
+                                    <button id="claim" onclick="claim()" class="tui-button">CLAIM</button>
+                                    <br><br>
+                                  </div>
+                                </fieldset>
+                            </div>
+
+                            <p class="nq-notice success" id="success"></p>
+                        </td>
+                        <td width="40%" class="center">
+                          $KORE Liquidity Generation Event
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="25" height="650px">
+                            <p>The KORE Liquidity Generation Event allows investors to contribute and lock their ETH. After the event is over, all contributed ETH will be deposited as liquidity to UniSwap.</p>
+                            <p>ETH depositors will be able to claim their share of LP tokens once the event has ended and liquidity has been added.</p>
+                            <p>By depositing, you are agreeing that the team behind KORE is not responsible for your funds after the event is over.</p>
+                            <p><a class="blue-255-text" href="https://medium.com/kvault-finance/kore-deflationary-farming-with-autonomous-profit-generation-c4986be6d1ed">Learn more about KORE</a></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tui-tab-content tui-content" id="tab-6-content">
+          <div class="tui-window" style="margin: 10px;">
+            <fieldset class="tui-fieldset no-legend">
+              Coming Soon
+            </fieldset>
+          </div>
+        </div>
+
+        <div class="tui-statusbar absolute cyan-168">
+            <ul>
+                <li><a target="_blank" href="https://twitter.com/kvault_finance"><span class="white-255-text">Twitter</span></a></li>
+                <li><a target="_blank" href="https://medium.com/@KvaultF"><span class="white-255-text">Blog</span></a></li>
+                <li><a target="_blank" href="https://t.me/kore_vault"><span class="white-255-text">Telegram</span></a></li>
+                <li><a target="_blank" href="https://discord.gg/p7uxbzh"><span class="white-255-text">Discord</span></a></li>
+                <li><a target="_blank" href="https://github.com/KORE-Vault"><span class="white-255-text">Github</span></a></li>
+                <li><a target="_blank" href="https://etherscan.io/address/0xA866F0198208Eb07c83081d5136BE7f775c2399e"><span class="white-255-text">Contract</span></a></li>
+                <span class="tui-datetime" data-format="y/M/d H:m:s"></span>
+            </ul>
+        </div>
+    </div>
+
+    <script src="js/metamask-onboarding.bundle.js" defer></script>
+    <script src="js/web3.min.js" defer></script>
+    <script src="js/kore.js" defer></script>
+</body>
+</html>
