@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>KORE Vault</title>
-    <link rel="shortcut icon" type="image/ico" href="images/icon.ico">
-    <meta name="description" content="KORE Vault - Farm without inflation">
-    <meta name="keywords" content="kore,vault,yield,finance,defi,ethereum">
+    <title>HDCORE Vault</title>
+    <link rel="shortcut icon" type="image/ico" href="./dist/images/icon.ico">
+    <meta name="description" content="HDCORE Vault - Farm without inflation">
+    <meta name="keywords" content="HDCORE,vault,yield,finance,defi,ethereum">
 
     <script src="dist/jquery-3.4.1.min.js"></script>
     <script src="dist/tuicss.min.js"></script>
@@ -20,10 +20,10 @@
         </div>
         <div class="tui-tabs">
             <ul>
-                <li><a class="tui-tab active" data-tab-content="tab-1-content">$KORE</a></li>
-                <li><a class="tui-tab" data-tab-content="tab-2-content">KVaults</a></li>
+                <li><a class="tui-tab active" data-tab-content="tab-1-content">$HDCORE</a></li>
+                <li><a class="tui-tab" data-tab-content="tab-2-content">$HDVaults</a></li>
                 <li><a class="tui-tab" data-tab-content="tab-3-content">KZap</a></li>
-                <li><a class="tui-tab" data-tab-content="tab-4-content">KPools</a></li>
+                <li><a class="tui-tab" data-tab-content="tab-4-content">HDPools</a></li>
                 <li><a class="tui-tab" data-tab-content="tab-5-content">LGE</a></li>
                 <li><a class="tui-tab" data-tab-content="tab-6-content">Governance</a></li>
             </ul>
@@ -34,7 +34,7 @@
             <fieldset class="tui-fieldset">
               <legend class="center">Summary</legend>
 
-              <legend class="center">$KORE</legend>
+              <legend class="center">$HDCORE</legend>
               <br>Total Supply........: [<span>10000</span>]
               <br>
               <br>Locked Supply.......: [<span id="kore-locked">0.00000</span>]
@@ -48,7 +48,7 @@
               <hr class="tui-divider"></hr>   <!-- With space -->
 
               <br>
-              <legend class="center">$KORE-$ETH LP</legend>
+              <legend class="center">$HDCORE-$ETH LP</legend>
               <br>Total...............: [<span id="lp-total-supply">0.00000</span>]
               <br>
               <br>Wallet..............: [<span id="lp-wallet-balance">0.00000</span>]
@@ -68,7 +68,7 @@
                       <td rowspan="2" width="60%" class="blue-168-text">
                         <div class="tui-window" style="margin: 10px;">
                           <fieldset class="tui-fieldset">
-                            <legend class="center">KORE-ETH LP Vault V2</legend>
+                            <legend class="center">HDCORE-ETH LP Vault V2</legend>
                             <br>APY %...............: [<span id="apyLP-v2">0.000</span>]
                             <br>
                             <br>Total Staked LP.....: [<span id="total-lp-locked-v2">0.00000</span>]
@@ -104,13 +104,13 @@
                         </div>
                       </td>
                       <td width="40%" class="center">
-                        KVaults - Deflationary Farming
+                        HDVaults - Deflationary Farming
                       </td>
                   </tr>
                   <tr>
                       <td width="25" height="650px">
-                          <p>KVaults earn their APY from a 1.5% fee from all sell orders and transactions made with KORE. This includes all trading volume of DEXs and any transaction on the blockchain.</p>
-                          <p>APY is calculated by the LP value; ETH price and KORE price and the trading volume - the more trading, the more profit KVault receives to share amongst the stakers.</p>
+                          <p>HDVaults earn their APY from a 1.5% fee from all sell orders and transactions made with HDCORE. This includes all trading volume of DEXs and any transaction on the blockchain.</p>
+                          <p>APY is calculated by the LP value; ETH price and HDCORE price and the trading volume - the more trading, the more profit KVault receives to share amongst the stakers.</p>
                       </td>
                   </tr>
                </tbody>
@@ -124,7 +124,7 @@
                       <td rowspan="2" width="60%" class="blue-168-text">
                           <div class="tui-window" style="margin: 10px;">
                             <fieldset class="tui-fieldset">
-                              <legend class="center">$ETH -> $KORE-$ETH LP</legend>
+                              <legend class="center">$ETH -> $HDCORE-$ETH LP</legend>
                               <div>
                                 <br>Amount In ETH.......: <input type="text" id="zap-eth-amount" class="tui-input white-168 black-text" onchange="getZapEstimate(document.getElementById('zap-eth-amount').value)" value="0.00000" style="width: 135px" />
                                 <button class="tui-button" onclick="zapMax()">MAX</button>
@@ -145,12 +145,12 @@
                           </div>
                       </td>
                       <td width="40%" class="center">
-                        KZap ETH > KORE/ETH LP
+                        KZap ETH > HDCORE/ETH LP
                       </td>
                     </tr>
                     <tr>
                         <td width="25" height="650px">
-                            <p>This is a dApp that will convert half your ETH deposited into KORE. Then create LP tokens for you, and deposit it into the KVault to start earning KORE.</p>
+                            <p>This is a dApp that will convert half your ETH deposited into HDCORE. Then create LP tokens for you, and deposit it into the KVault to start earning HDCORE.</p>
                             <p>It’s pretty neat - saving you time and gas. Please be aware that once you KZap your ETH into the LP tokens, you will not be about to unlock it.</p>
                             <p>You are able to withdraw your LP tokens from the KVault. You will be able to sell them on Balancer and Uniswap provided there is liquidity available.</p>
                         </td>
@@ -176,8 +176,8 @@
                   </tr>
                   <tr>
                       <td width="25" height="650px">
-                          <p>KPools provide a variety of profit strategy pools to earn interest. When you stake your tokens in the KPools you will earn the deflationary asset $KORE.</p>
-                          <p>The KPools will utilise the interest earned to constantly buy KORE from the market. By staking in the KPools you are providing buy pressure on the token you are earning.</p>
+                          <p>KPools provide a variety of profit strategy pools to earn interest. When you stake your tokens in the KPools you will earn the deflationary asset $HDCORE.</p>
+                          <p>The KPools will utilise the interest earned to constantly buy HDCORE from the market. By staking in the KPools you are providing buy pressure on the token you are earning.</p>
                       </td>
                   </tr>
                </tbody>
@@ -191,10 +191,10 @@
                         <td rowspan="2" width="60%" class="blue-168-text">
                             <div class="tui-window">
                                 <fieldset class="tui-fieldset">
-                                  <legend class="center">KORE-ETH LGE</legend>
+                                  <legend class="center">HDCORE-ETH LGE</legend>
                                   <br>Time Remaining......: [<span id="countdown">00:00:00:00</span>]
                                   <br>
-                                  <br>Total $KORE Supply..: [<span>10000</span>]
+                                  <br>Total $HDCORE Supply..: [<span>10000</span>]
                                   <br>
                                   <br>ETH Deposited.......: [<span id="total-deposit">0.00000</span>]
                                   <br>
@@ -246,15 +246,15 @@
                             <p class="nq-notice success" id="success"></p>
                         </td>
                         <td width="40%" class="center">
-                          $KORE Liquidity Generation Event
+                          $HDCORE Liquidity Generation Event
                         </td>
                     </tr>
                     <tr>
                         <td width="25" height="650px">
-                            <p>The KORE Liquidity Generation Event allows investors to contribute and lock their ETH. After the event is over, all contributed ETH will be deposited as liquidity to UniSwap.</p>
+                            <p>The HDCORE Liquidity Generation Event allows investors to contribute and lock their ETH. After the event is over, all contributed ETH will be deposited as liquidity to UniSwap.</p>
                             <p>ETH depositors will be able to claim their share of LP tokens once the event has ended and liquidity has been added.</p>
-                            <p>By depositing, you are agreeing that the team behind KORE is not responsible for your funds after the event is over.</p>
-                            <p><a class="blue-255-text" href="https://medium.com/kvault-finance/kore-deflationary-farming-with-autonomous-profit-generation-c4986be6d1ed">Learn more about KORE</a></p>
+                            <p>By depositing, you are agreeing that the team behind HDCORE is not responsible for your funds after the event is over.</p>
+                            <p><a class="blue-255-text" href="https://medium.com/kvault-finance/kore-deflationary-farming-with-autonomous-profit-generation-c4986be6d1ed">Learn more about HDCORE</a></p>
                         </td>
                     </tr>
                 </tbody>
