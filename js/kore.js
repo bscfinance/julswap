@@ -16,11 +16,11 @@ let LPrewards;
 
 // ============= Duplicate =================
 const koreAddress = '0x37e4a8529104Ea82bccEc31EDdc5e373433986c6';
-// const LPTokenAddress = '0xef035F52e5a8974adBF4380e020cD4A0A349C517'
+const LPTokenAddress = '0x97436dcc1c27B7D8eBfAE5dA59ED2CaeeeDB9766';
 const koreVaultAddress = '0x4ec3BC3f1AD02Cb60cE08aFE88EeCacFE75A4a73';
-// const koreVaultV2Address = '0xE5BeB064d95c440B067Acab01eA4f752B32F63a2'
-// const wethAddress = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'
-// const routerAddress = `0xcB8682d159Ae26CaedD115B2478700510c92B2b4`
+const koreVaultV2Address = '0xE5BeB064d95c440B067Acab01eA4f752B32F63a2';
+const wethAddress = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2';
+const routerAddress = `0xcB8682d159Ae26CaedD115B2478700510c92B2b4`;
 
 // The contract addresses and ABIs
 // const koreAddress = '0xA866F0198208Eb07c83081d5136BE7f775c2399e'
