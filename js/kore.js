@@ -15,18 +15,18 @@ let LPrewards;
 // HDCORE token 0x37e4a8529104Ea82bccEc31EDdc5e373433986c6    Done
 
 // ============= Duplicate =================
-const koreAddress = '0x37e4a8529104Ea82bccEc31EDdc5e373433986c6';
+const HDCoreAddress = '0x37e4a8529104Ea82bccEc31EDdc5e373433986c6';
 const LPTokenAddress = '0x97436dcc1c27B7D8eBfAE5dA59ED2CaeeeDB9766';
-const koreVaultAddress = '0x4ec3BC3f1AD02Cb60cE08aFE88EeCacFE75A4a73';
-const koreVaultV2Address = '0xc502f897B8Fbc153775598ff5bF86DEB34668A09';
+const HDVaultAddress = '0x4ec3BC3f1AD02Cb60cE08aFE88EeCacFE75A4a73';
+const HDCoreV2Address = '0xc502f897B8Fbc153775598ff5bF86DEB34668A09';
 const wethAddress = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2';
 const routerAddress = `0x3D602Bc3d36FbD89E0cd16D0f0aA73E4da66Ba1A`;
 
 // The contract addresses and ABIs
-// const koreAddress = '0xA866F0198208Eb07c83081d5136BE7f775c2399e'
+// const HDCoreAddress = '0xA866F0198208Eb07c83081d5136BE7f775c2399e'
 // const LPTokenAddress = '0xef035F52e5a8974adBF4380e020cD4A0A349C517'
-// const koreVaultAddress = '0xc48b627c9945b42De04f43f48E9c92B3B74BCEb9'
-// const koreVaultV2Address = '0xE5BeB064d95c440B067Acab01eA4f752B32F63a2'
+// const HDVaultAddress = '0xc48b627c9945b42De04f43f48E9c92B3B74BCEb9'
+// const HDCoreV2Address = '0xE5BeB064d95c440B067Acab01eA4f752B32F63a2'
 // const wethAddress = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'
 // const routerAddress = `0xcB8682d159Ae26CaedD115B2478700510c92B2b4`
 
@@ -134,7 +134,7 @@ async function connect() {
 async function loadSummary() {
   var koreTokenInstance = new web3.eth.Contract(
     JSON.parse(ABI.koreToken),
-    koreAddress
+    HDCoreAddress
   );
   var lockedLP = web3.utils.fromWei(
     await koreTokenInstance.methods.balanceOf(LPTokenAddress).call()
@@ -170,7 +170,7 @@ async function loadSummary() {
 
   var vaultV2 = new web3.eth.Contract(
     JSON.parse(ABI.koreVaultV2),
-    koreVaultV2Address
+    HDCoreV2Address
   );
   var lpStaked = web3.utils.fromWei(
     (await vaultV2.methods.userInfo('0', address).call()).amount
@@ -281,7 +281,7 @@ async function deposit() {
       {
         from: address,
         value: amount,
-        to: koreAddress,
+        to: HDCoreAddress,
         data:
           '0xda620cd70000000000000000000000000000000000000000000000000000000000000001',
       },
@@ -311,7 +311,7 @@ async function deposit() {
 }
 
 async function claim() {
-  var token = new web3.eth.Contract(JSON.parse(ABI.koreToken), koreAddress);
+  var token = new web3.eth.Contract(JSON.parse(ABI.koreToken), HDCoreAddress);
   const claim = await new Promise((resolve, reject) => {
     token.methods.claimLPTokens().send(
       {
@@ -349,7 +349,7 @@ async function loadLGEData() {
       parseFloat(web3.utils.fromWei(balance, 'ether')).toFixed(4) +
       ' ETH]';
   });
-  var token = new web3.eth.Contract(JSON.parse(ABI.koreToken), koreAddress);
+  var token = new web3.eth.Contract(JSON.parse(ABI.koreToken), HDCoreAddress);
   const ethContributed = web3.utils.fromWei(
     await token.methods.ethContributed(address).call(),
     'ether'
@@ -371,18 +371,15 @@ setInterval(loadLGEData(), 15000);
 
 async function loadKVaultData() {
   if (!address) return;
-  var vault = new web3.eth.Contract(
-    JSON.parse(ABI.koreVault),
-    koreVaultAddress
-  );
+  var vault = new web3.eth.Contract(JSON.parse(ABI.koreVault), HDVaultAddress);
   var pendingKore = await vault.methods.pendingKore('0', address).call();
 
   const pair = new web3.eth.Contract(JSON.parse(ABI.pair), LPTokenAddress);
   const weth = new web3.eth.Contract(JSON.parse(ABI.ERC20), wethAddress);
-  const kore = new web3.eth.Contract(JSON.parse(ABI.ERC20), koreAddress);
+  const kore = new web3.eth.Contract(JSON.parse(ABI.ERC20), HDCoreAddress);
   var totalLP = await pair.methods.totalSupply().call();
   var wethLP = await weth.methods.balanceOf(LPTokenAddress).call();
-  var lockedLP = await pair.methods.balanceOf(koreVaultAddress).call();
+  var lockedLP = await pair.methods.balanceOf(HDVaultAddress).call();
   // document.getElementById('stakedLP').innerHTML = "Total Tokens Locked<br>" + parseFloat(web3.utils.fromWei(lockedLP, 'ether')).toFixed(4)
   var averageRewards = await vault.methods
     .averageFeesPerBlockSinceStart()
@@ -419,10 +416,7 @@ async function loadKVaultData() {
 setInterval(loadKVaultData, 15000);
 
 async function claimLPV1() {
-  var vault = new web3.eth.Contract(
-    JSON.parse(ABI.koreVault),
-    koreVaultAddress
-  );
+  var vault = new web3.eth.Contract(JSON.parse(ABI.koreVault), HDVaultAddress);
   const claim = await new Promise((resolve, reject) => {
     vault.methods.deposit('0', '0').send(
       {
@@ -446,10 +440,7 @@ async function claimLPV1() {
 }
 
 async function withdrawAllLPV1() {
-  var vault = new web3.eth.Contract(
-    JSON.parse(ABI.koreVault),
-    koreVaultAddress
-  );
+  var vault = new web3.eth.Contract(JSON.parse(ABI.koreVault), HDVaultAddress);
   var amountStaked = (await vault.methods.userInfo('0', address).call()).amount;
   const withdraw = await new Promise((resolve, reject) => {
     vault.methods.withdraw('0', amountStaked).send(
@@ -479,16 +470,16 @@ async function loadKVaultV2Data() {
   if (!address) return;
   var vault = new web3.eth.Contract(
     JSON.parse(ABI.koreVaultV2),
-    koreVaultV2Address
+    HDCoreV2Address
   );
   var pendingKore = await vault.methods.pendingKore('0', address).call();
 
   const pair = new web3.eth.Contract(JSON.parse(ABI.pair), LPTokenAddress);
   const weth = new web3.eth.Contract(JSON.parse(ABI.ERC20), wethAddress);
-  const kore = new web3.eth.Contract(JSON.parse(ABI.ERC20), koreAddress);
+  const kore = new web3.eth.Contract(JSON.parse(ABI.ERC20), HDCoreAddress);
   var totalLP = await pair.methods.totalSupply().call();
   var wethLP = await weth.methods.balanceOf(LPTokenAddress).call();
-  var lockedLP = await pair.methods.balanceOf(koreVaultV2Address).call();
+  var lockedLP = await pair.methods.balanceOf(HDCoreV2Address).call();
   var averageRewards = await vault.methods
     .averageFeesPerBlockSinceStart()
     .call();
@@ -536,7 +527,7 @@ async function approveLPV2() {
   const approve = await new Promise((resolve, reject) => {
     LPToken.methods
       .approve(
-        koreVaultV2Address,
+        HDCoreV2Address,
         '9999999999999999999999999999999999999999999999999999999999'
       )
       .send(
@@ -555,7 +546,7 @@ async function stakeLPV2() {
   // approve first if not approved
   var LPToken = new web3.eth.Contract(JSON.parse(ABI.LPToken), LPTokenAddress);
   const allowance = await LPToken.methods
-    .allowance(address, koreVaultV2Address)
+    .allowance(address, HDCoreV2Address)
     .call();
   if (allowance < 99999999999999999999999999999999999999) {
     await approveLPV2();
@@ -563,7 +554,7 @@ async function stakeLPV2() {
 
   var vault = new web3.eth.Contract(
     JSON.parse(ABI.koreVaultV2),
-    koreVaultV2Address
+    HDCoreV2Address
   );
   var amount = document.getElementById('LPamount-v2').value;
   if (!amount) return;
@@ -593,7 +584,7 @@ async function stakeAllLPV2() {
   // approve first if not approved
   var LPToken = new web3.eth.Contract(JSON.parse(ABI.LPToken), LPTokenAddress);
   const allowance = await LPToken.methods
-    .allowance(address, koreVaultV2Address)
+    .allowance(address, HDCoreV2Address)
     .call();
   if (allowance < 99999999999999999999999999999999999999) {
     await approveLPV2();
@@ -601,7 +592,7 @@ async function stakeAllLPV2() {
 
   var vault = new web3.eth.Contract(
     JSON.parse(ABI.koreVaultV2),
-    koreVaultV2Address
+    HDCoreV2Address
   );
   const deposit = await new Promise((resolve, reject) => {
     vault.methods.depositAll('0').send(
@@ -628,7 +619,7 @@ async function stakeAllLPV2() {
 async function withdrawLPV2() {
   var vault = new web3.eth.Contract(
     JSON.parse(ABI.koreVaultV2),
-    koreVaultV2Address
+    HDCoreV2Address
   );
   const withdraw = await new Promise((resolve, reject) => {
     vault.methods
@@ -659,7 +650,7 @@ async function withdrawLPV2() {
 async function withdrawAllLPV2() {
   var vault = new web3.eth.Contract(
     JSON.parse(ABI.koreVaultV2),
-    koreVaultV2Address
+    HDCoreV2Address
   );
   const withdraw = await new Promise((resolve, reject) => {
     vault.methods.withdrawAll('0').send(
@@ -686,7 +677,7 @@ async function withdrawAllLPV2() {
 async function claimLPV2() {
   var vault = new web3.eth.Contract(
     JSON.parse(ABI.koreVaultV2),
-    koreVaultV2Address
+    HDCoreV2Address
   );
   const claim = await new Promise((resolve, reject) => {
     vault.methods.deposit('0', '0').send(
