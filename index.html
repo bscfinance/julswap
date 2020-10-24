@@ -158,31 +158,56 @@
                  </tbody>
              </table>
         </div>
-
         <div class="tui-tab-content tui-content" id="tab-4-content">
           <table class="tui-table-grid">
               <tbody>
                   <tr>
                       <td rowspan="2" width="60%" class="blue-168-text">
                         <div class="tui-window" style="margin: 10px;">
-                          <fieldset class="tui-fieldset no-legend">
-                            Coming Soon
+                          <fieldset class="tui-fieldset">
+                            <legend class="center">DAI KPool 01</legend>
+                            <br>APY (daily) %.......: [<span>APY Discovery</span>]
+                            <br>
+                            <br>APY (weekly) %......: [<span>APY Discovery</span>]
+                            <br>
+                            <br>Total Staked DAI....: [<span id="dai-pool-tvl">0.00000</span>]
+                            <br>
+                            <br>Your Staked DAI.....: [<span id="dai-pool-your-staked">0.00000</span>]
+                            <br>
+                            <br>Your Unstaked DAI...: [<span id="dai-balance">0.00000</span>]
+                            <br><br>
+                            <hr class="tui-divider"></hr>   <!-- With space -->
+
+                            <!-- CONTRIBUTE -->
+                            <div>
+                              <br>Amount In DAI.......: <input type="text" id="dai-amount" class="tui-input white-168 black-text" value="0.00000" style="width: 135px" />
+                              <br><br>
+                              <button id="dai-pool-stake" onclick="daiPoolStake()" class="tui-button center">STAKE</button>
+                              <button id="dai-pool-withdraw" onclick="daiPoolWithdraw()" class="tui-button center">WITHDRAW</button>
+                              <br><br>
+                              <button id="dai-pool-stake-all" onclick="daiPoolStakeAll()" class="tui-button center">STAKE ALL</button>
+                              <button id="dai-pool-withdraw-all" onclick="daiPoolWithdrawAll()" class="tui-button center">WITHDRAW ALL</button>
+                            </div>
+
+                            <br>
                           </fieldset>
                         </div>
                       </td>
                       <td width="40%" class="center">
-                        KPools - 0% IL, Profit Strategy Pools
+                        HDPools - 0% IL, Profit Strategy Pools
                       </td>
                   </tr>
                   <tr>
                       <td width="25" height="650px">
-                          <p>KPools provide a variety of profit strategy pools to earn interest. When you stake your tokens in the KPools you will earn the deflationary asset $HDCORE.</p>
-                          <p>The KPools will utilise the interest earned to constantly buy HDCORE from the market. By staking in the KPools you are providing buy pressure on the token you are earning.</p>
+                          <p>HDPools provide a variety of profit strategy pools to earn interest. When you stake your tokens in the HDPools you will earn the deflationary asset $HDCORE.</p>
+                          <p>The HDPools will utilise the interest earned to constantly buy HDCORE from the market. By staking in the HDPools you are providing buy pressure on the token you are earning.</p>
+                          <p>Your earned HDCORE will be market ordered from your interest accrued and then claimed when you withdraw from the HDPool. Your total staked DAI balance represents the value of both your claimable HDCORE and DAI.</p>
                       </td>
                   </tr>
                </tbody>
            </table>
         </div>
+
 
         <div class="tui-tab-content tui-content" id="tab-5-content">
             <table class="tui-table-grid">
