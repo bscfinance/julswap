@@ -15,12 +15,12 @@ let LPrewards;
 // HDCORE token 0x37e4a8529104Ea82bccEc31EDdc5e373433986c6    Done
 
 // ============= Duplicate =================
-const HDCoreAddress = '0x37e4a8529104Ea82bccEc31EDdc5e373433986c6';
-const LPTokenAddress = '0x97436dcc1c27B7D8eBfAE5dA59ED2CaeeeDB9766';
+const HDCoreAddress = '0x63Da3b945e86FE2D1FCAf4eb138474E934E2B94f';
+const LPTokenAddress = '0xc7891dc691b0c03047e9415e7d4a75da76cd8297';
 const HDVaultAddress = '0x4ec3BC3f1AD02Cb60cE08aFE88EeCacFE75A4a73';
 const HDCoreV2Address = '0xc502f897B8Fbc153775598ff5bF86DEB34668A09';
 const wethAddress = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2';
-const routerAddress = `0x3D602Bc3d36FbD89E0cd16D0f0aA73E4da66Ba1A`;
+const routerAddress = '0x3D602Bc3d36FbD89E0cd16D0f0aA73E4da66Ba1A';
 
 // The contract addresses and ABIs
 // const HDCoreAddress = '0xA866F0198208Eb07c83081d5136BE7f775c2399e'
