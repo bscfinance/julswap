@@ -4,9 +4,15 @@
   src: url('fonts/Perfect DOS VGA 437 Win.ttf');
 }
 
+@font-face {
+  font-family: Pico;
+  src: url(../dist/fonts/ARCADEPI.TTF);
+}
+
 html {
-  font-family: 'Lucida Console', monospace;
-  font-size: 18px;
+  /* font-family: 'Lucida Console', monospace; */
+  font-family: 'Pico';
+  font-size: 17px;
   box-sizing: border-box;
 }
 
@@ -20,6 +26,7 @@ body {
   font-family: inherit;
   font-size: inherit;
   box-sizing: inherit;
+  font-family: 'Pico';
 }
 
 ul {
