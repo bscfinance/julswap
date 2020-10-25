@@ -232,6 +232,14 @@ textarea {
   background-color: #a8a8a8 !important;
 }
 
+.purple-169 {
+  background-color: #b8abd0 !important;
+}
+
+.purple-167 {
+  background-color: #4d4065 !important;
+}
+
 .orange-168 {
   background-color: #a85600 !important;
 }
@@ -1466,8 +1474,8 @@ input[type='button'] {
 }
 
 .tui-tab.active {
-  background-color: #a8a8a8;
-  color: #0000a8;
+  background-color: #b8abd0;
+  color: #4d4065;
 }
 
 .tui-tab-content {
