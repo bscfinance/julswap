@@ -12,13 +12,13 @@
     <link rel="stylesheet" href="dist/tuicss.min.css">
 </head>
 
-<body class="tui-bg-blue-black">
-    <div class="tui-screen-1024-768 centered bordered white-168">
-        <div class="tui-panel cyan-168 full-width black-255-text tui-no-shadow center">
+<body class="tui-bg-purple-black">
+    <div class="tui-screen-1024-768 purple-169 centered bordered white-168">
+        <div class="tui-panel purple-169 full-width black-255-text tui-no-shadow center">
             <!-- Focused -->
-            <button id="walletconnect" onclick="connect()" class="tui-button white-text tui-no-shadow" autofocus>Connect Wallet</button>
+            <button id="walletconnect" onclick="connect()" class="tui-button white-text purple-168 tui-no-shadow" autofocus>Connect Wallet</button>
         </div>
-        <div class="tui-tabs">
+        <div class="tui-tabs purple-167">
             <ul>
                 <li><a class="tui-tab active" data-tab-content="tab-1-content">$HDCORE</a></li>
                 <li><a class="tui-tab" data-tab-content="tab-2-content">$HDVaults</a></li>
@@ -30,7 +30,7 @@
         </div>
 
         <div class="tui-tab-content tui-content" id="tab-1-content">
-          <div class="tui-window" style="margin: 10px;">
+          <div class="tui-window purple-167" style="margin: 20px;">
             <fieldset class="tui-fieldset">
               <legend class="center">Summary</legend>
 
@@ -40,19 +40,19 @@
               <br>Locked Supply.......: [<span id="kore-locked">0.00000</span>]
               <br>
               <br>Wallet..............: [<span id="kore-wallet-balance">0.00000</span>]
-              <a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0xa866f0198208eb07c83081d5136be7f775c2399e" target="_blank"><button class="tui-button">GET</button></a>
+              <a href="#" ><button class="tui-button purple-168 white-text">GET</button></a>
               <br>
               <br>Claimable...........: [<span id="kore-claimable-balance">0.00000</span>]
               <br><br>
 
-              <hr class="tui-divider"></hr>   <!-- With space -->
+              <hr class="tui-divider"></hr>   
 
               <br>
               <legend class="center">$HDCORE-$ETH LP</legend>
               <br>Total...............: [<span id="lp-total-supply">0.00000</span>]
               <br>
               <br>Wallet..............: [<span id="lp-wallet-balance">0.00000</span>]
-              <button class="tui-button"><a style="padding: 0px; color: #000;" class="tui-tab" data-tab-content="tab-3-content">GET</a></button>
+              <button class="tui-button cyan-168 white-text"><a style="padding: 0px; color: #fff;" class="tui-tab" data-tab-content="tab-3-content">GET</a></button>
               <br>
               <br>Staked..............: [<span id="lp-staked">0.00000</span>]
               <br><br>
@@ -66,7 +66,7 @@
               <tbody>
                   <tr>
                       <td rowspan="2" width="60%" class="blue-168-text">
-                        <div class="tui-window" style="margin: 10px;">
+                        <div class="tui-window purple-167" style="margin: 10px;">
                           <fieldset class="tui-fieldset">
                             <legend class="center">HDCORE-ETH LP Vault V2</legend>
                             <br>APY %...............: [<span id="apyLP-v2">0.000</span>]
@@ -85,11 +85,11 @@
                             <div>
                               <br>Amount In LP........: <input type="text" id="LPamount-v2" class="tui-input white-168 black-text" value="0.00" style="width: 135px" />
                               <br><br>
-                              <button id="stakeLPbutton-v2" onclick="stakeLPV2()" class="tui-button center">STAKE</button>
-                              <button id="withdrawLPbutton-v2" onclick="withdrawLPV2()" class="tui-button center">WITHDRAW</button>
+                              <button id="stakeLPbutton-v2" onclick="stakeLPV2()" class="tui-button cyan-168 white-text center">STAKE</button>
+                              <button id="withdrawLPbutton-v2" onclick="withdrawLPV2()" class="tui-button cyan-168 white-text center">WITHDRAW</button>
                               <br><br>
-                              <button id="stakeAllLPbutton-v2" onclick="stakeAllLPV2()" class="tui-button center">STAKE ALL</button>
-                              <button id="withdrawAllLPbutton-v2" onclick="withdrawAllLPV2()" class="tui-button center">WITHDRAW ALL</button>
+                              <button id="stakeAllLPbutton-v2" onclick="stakeAllLPV2()" class="tui-button purple-168 white-text center">STAKE ALL</button>
+                              <button id="withdrawAllLPbutton-v2" onclick="withdrawAllLPV2()" class="tui-button purple-168 white-text center">WITHDRAW ALL</button>
                               <button style="background-color: #ff00ff;" id="claimLPbutton-v2" onclick="claimLPV2()" class="tui-button center white-text">CLAIM</button>
                             </div>
 
@@ -97,7 +97,7 @@
                             <hr class="tui-divider"></hr>   <!-- With space -->
                             <div class="center">
                               <br>
-                              <button class="tui-button"><a style="padding: 0px; color: #000;" class="tui-tab" data-tab-content="tab-3-content">Get LP and Stake with One Click</a></button>
+                              <button class="tui-button purple-169 white-text"><a style="padding: 0px; color: #000;" class="tui-tab" data-tab-content="tab-3-content white-text ">Get LP and Stake with One Click</a></button>
                               <br><br>
                             </div>
                           </fieldset>
@@ -122,12 +122,12 @@
               <tbody>
                   <tr>
                       <td rowspan="2" width="60%" class="blue-168-text">
-                          <div class="tui-window" style="margin: 10px;">
+                          <div class="tui-window purple-167" style="margin: 10px;">
                             <fieldset class="tui-fieldset">
                               <legend class="center">$ETH -> $HDCORE-$ETH LP</legend>
                               <div>
                                 <br>Amount In ETH.......: <input type="text" id="zap-eth-amount" class="tui-input white-168 black-text" onchange="getZapEstimate(document.getElementById('zap-eth-amount').value)" value="0.00000" style="width: 135px" />
-                                <button class="tui-button" onclick="zapMax()">MAX</button>
+                                <button class="tui-button cyan-168" onclick="zapMax()">MAX</button>
                                 <br><br>
                                 <p>-> estimated <span id="zap-lp-estimate">0.00000</span> LP</p>
                                 <br>
@@ -137,7 +137,7 @@
                                 </label>
                                 <br>
                                 <div class="center">
-                                  <button id="zap-lp" onclick="zap()" class="tui-button">ZAP ETH TO LP</button>
+                                  <button id="zap-lp " onclick="zap()" class="tui-button purple-168 white-text">ZAP ETH TO LP</button>
                                 </div>
                                 <br>
                               </div>
@@ -158,12 +158,14 @@
                  </tbody>
              </table>
         </div>
+
+
         <div class="tui-tab-content tui-content" id="tab-4-content">
           <table class="tui-table-grid">
               <tbody>
                   <tr>
                       <td rowspan="2" width="60%" class="blue-168-text">
-                        <div class="tui-window" style="margin: 10px;">
+                        <div class="tui-window purple-167" style="margin: 10px;">
                           <fieldset class="tui-fieldset">
                             <legend class="center">DAI KPool 01</legend>
                             <br>APY (daily) %.......: [<span>APY Discovery</span>]
@@ -182,11 +184,11 @@
                             <div>
                               <br>Amount In DAI.......: <input type="text" id="dai-amount" class="tui-input white-168 black-text" value="0.00000" style="width: 135px" />
                               <br><br>
-                              <button id="dai-pool-stake" onclick="daiPoolStake()" class="tui-button center">STAKE</button>
-                              <button id="dai-pool-withdraw" onclick="daiPoolWithdraw()" class="tui-button center">WITHDRAW</button>
+                              <button id="dai-pool-stake" onclick="daiPoolStake()" class="tui-button center cyan-168 white-text">STAKE</button>
+                              <button id="dai-pool-withdraw" onclick="daiPoolWithdraw()" class="tui-button cyan-168 white-text center">WITHDRAW</button>
                               <br><br>
-                              <button id="dai-pool-stake-all" onclick="daiPoolStakeAll()" class="tui-button center">STAKE ALL</button>
-                              <button id="dai-pool-withdraw-all" onclick="daiPoolWithdrawAll()" class="tui-button center">WITHDRAW ALL</button>
+                              <button id="dai-pool-stake-all" onclick="daiPoolStakeAll()" class="tui-button center cyan-168 white-text">STAKE ALL</button>
+                              <button id="dai-pool-withdraw-all" onclick="daiPoolWithdrawAll()" class="tui-button center cyan-168 white-text">WITHDRAW ALL</button>
                             </div>
 
                             <br>
@@ -214,7 +216,7 @@
                 <tbody>
                     <tr>
                         <td rowspan="2" width="60%" class="blue-168-text">
-                            <div class="tui-window">
+                            <div class="tui-window purple-167">
                                 <fieldset class="tui-fieldset">
                                   <legend class="center">HDCORE-ETH LGE</legend>
                                   <br>Time Remaining......: [<span id="countdown">00:00:00:00</span>]
@@ -262,7 +264,7 @@
                                   <div id="claim-lp" class="center" style="display: none;">
                                     <legend class="center">Claim LP Token</legend>
                                     <br>
-                                    <button id="claim" onclick="claim()" class="tui-button">CLAIM</button>
+                                    <button id="claim" onclick="claim()" class="tui-button cyan-168 white-text">CLAIM</button>
                                     <br><br>
                                   </div>
                                 </fieldset>
@@ -279,7 +281,7 @@
                             <p>The HDCORE Liquidity Generation Event allows investors to contribute and lock their ETH. After the event is over, all contributed ETH will be deposited as liquidity to UniSwap.</p>
                             <p>ETH depositors will be able to claim their share of LP tokens once the event has ended and liquidity has been added.</p>
                             <p>By depositing, you are agreeing that the team behind HDCORE is not responsible for your funds after the event is over.</p>
-                            <p><a class="blue-255-text" href="https://medium.com/kvault-finance/kore-deflationary-farming-with-autonomous-profit-generation-c4986be6d1ed">Learn more about HDCORE</a></p>
+                            <p><a class="blue-255-text" href="#">Learn more about HDCORE</a></p>
                         </td>
                     </tr>
                 </tbody>
@@ -287,14 +289,14 @@
         </div>
 
         <div class="tui-tab-content tui-content" id="tab-6-content">
-          <div class="tui-window" style="margin: 10px;">
+          <div class="tui-window purple-167" style="margin: 10px;">
             <fieldset class="tui-fieldset no-legend">
               Coming Soon
             </fieldset>
           </div>
         </div>
 
-        <div class="tui-statusbar absolute cyan-168">
+        <div class="tui-statusbar absolute purple-167">
             <ul>
                 <li><a target="_blank" href="https://twitter.com"><span class="white-255-text">Twitter</span></a></li>
                 <li><a target="_blank" href="https://medium.com/"><span class="white-255-text">Blog</span></a></li>
@@ -302,7 +304,7 @@
                 <li><a target="_blank" href="https://discord.gg"><span class="white-255-text">Discord</span></a></li>
                 <li><a target="_blank" href="https://github.com/"><span class="white-255-text">Github</span></a></li>
                 <li><a target="_blank" href="https://etherscan.io/address/0x37e4a8529104Ea82bccEc31EDdc5e373433986c6"><span class="white-255-text">Contract</span></a></li>
-                <span class="tui-datetime" data-format="d/m/y H:m:s"></span>
+                <span class="tui-datetime white-text" data-format="y/M/d H:m:s a"></span>
             </ul>
         </div>
     </div>
