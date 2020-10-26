@@ -4,6 +4,10 @@
   src: url('fonts/Perfect DOS VGA 437 Win.ttf');
 }
 
+.main {
+  background: url(./images/HDCOReLogo.png) center center no-repeat;
+}
+
 @font-face {
   font-family: Pico;
   src: url(../dist/fonts/ARCADEPI.TTF);
