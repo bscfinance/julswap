@@ -30,7 +30,8 @@ const routerAddress = '0x3D602Bc3d36FbD89E0cd16D0f0aA73E4da66Ba1A';
 // const wethAddress = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'
 // const routerAddress = `0xcB8682d159Ae26CaedD115B2478700510c92B2b4`
 
-const eventEndTime = 1603529868934;
+const eventEndTime = 1604113760000;
+
 connect();
 
 const ABI = {
