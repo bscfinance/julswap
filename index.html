@@ -29,33 +29,37 @@
                 <li><a class="tui-tab" data-tab-content="tab-3-content">HDzap</a></li>
                 <li><a class="tui-tab" data-tab-content="tab-4-content">HDPools</a></li>
                 <li><a class="tui-tab" data-tab-content="tab-5-content">LGE</a></li>
-                <li><a class="tui-tab" data-tab-content="tab-6-content">Governance</a></li>
+                <li><a class="tui-tab" data-tab-content="tab-6-content">HDCAPITAL Pools</a></li>
             </ul>
         </div>
 
         <div class="tui-tab-content tui-content" id="tab-1-content">
+          <table class="tui-table-grid">	
+            <tbody>	
+                <tr>	
+                    <td rowspan="2" width="60%" class="blue-168-text">
           <div class="tui-window purple-167" style="margin: 20px;">
             <fieldset class="tui-fieldset">
               <legend class="center">Summary</legend>
 
               <legend class="center">$HDCORE</legend>
-              <br>Total Supply........: [<span>12,000</span>]
+              <br>Total Supply........: [<span>10,000</span>]
               <br>
-              <br>Locked Supply.......: [<span id="HDcore-locked">0.00000</span>]
+              <br>Forever-Locked Supply.......: [<span id="HDcore-locked">0.00000</span>]
               <br>
-              <br>Wallet..............: [<span id="HDCore-wallet-balance">0.00000</span>]
-              <a href="#" ><button class="tui-button purple-168 white-text">GET</button></a>
+              <br>Your Wallet..............: [<span id="HDCore-wallet-balance">0.00000</span>]
+              <a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x3dde2e3a7d1b4e62d2e0cf5d16c9fee667d47551" target="_blank" ><button class="tui-button purple-168 white-text">GET HDCORE</button></a>
               <br>
               <br>Claimable...........: [<span id="HDCore-claimable-balance">0.00000</span>]
               <br><br>
 
-              <hr class="tui-divider"></hr>   
+              <hr class="tui-divider"></hr>   <!-- With space -->
 
               <br>
               <legend class="center">$HDCORE-$ETH LP</legend>
               <br>Total...............: [<span id="lp-total-supply">0.00000</span>]
               <br>
-              <br>Wallet..............: [<span id="lp-wallet-balance">0.00000</span>]
+              <br>Your Wallet..............: [<span id="lp-wallet-balance">0.00000</span>]
               <button class="tui-button cyan-168 white-text"><a style="padding: 0px; color: #fff;" class="tui-tab" data-tab-content="tab-3-content">GET</a></button>
               <br>
               <br>Staked..............: [<span id="lp-staked">0.00000</span>]
@@ -63,6 +67,21 @@
             </fieldset>
           </div>
           <p style="margin: 10px;" class="nq-notice warning" id="warning"></p>
+        </td>
+        <td width="40%" class="center">
+          HARDCORE Vault Finance v1
+        </td>
+      </tr>
+      <tr>
+          <td width="25" height="650px">
+              <p>HARDCORE Vault  is a Deflationary  farming model. 20% of Total HDCORE Supply   allocated on LGE for Liquidity is locked and earns HDCORE from the HDVAULT when you lock your LP tokens. LGE Contributor also  receive  HDCORE tokens of equal value to their contribution(LGE contributors get LP tokens  + $HDCORE tokens for their support! You HARDCORE bruh) .</p>
+              <p>The HDVaults will earn from a 1.5% fee from all sell orders and transactions made with HDCORE. HDPools will earn from profit strategy contracts to earn interest.</p>
+              <p>The HDPools  constantly buy HDCORE from the market!  .</p>
+              <p>HARDCORE Vault Finance's goal is to maximise HDVault and HDPool  user profits and to constantly improve/develop the protocol to be a competitive profit-making asset for our investors. </p>
+          </td>
+      </tr>
+   </tbody>
+</table>
         </div>
 
         <div class="tui-tab-content tui-content" id="tab-2-content">
@@ -108,13 +127,13 @@
                         </div>
                       </td>
                       <td width="40%" class="center">
-                        HDVaults - Deflationary Farming
+                        HDVaults - Deflationary Farming 
                       </td>
                   </tr>
                   <tr>
                       <td width="25" height="650px">
                           <p>HDVaults earn their APY from a 1.5% fee from all sell orders and transactions made with HDCORE. This includes all trading volume of DEXs and any transaction on the blockchain.</p>
-                          <p>APY is calculated by the LP value; ETH price and HDCORE price and the trading volume - the more trading, the more profit KVault receives to share amongst the stakers.</p>
+                          <p>APY is calculated by the LP value; ETH price and HDCORE price and the trading volume - the more trading, the more profit HDVault receives to share amongst the stakers.</p>
                       </td>
                   </tr>
                </tbody>
@@ -128,7 +147,7 @@
                       <td rowspan="2" width="60%" class="blue-168-text">
                           <div class="tui-window purple-167" style="margin: 10px;">
                             <fieldset class="tui-fieldset">
-                              <legend class="center">$ETH -> $HDCORE-$ETH LP</legend>
+                              <legend class="center">ETH  to HDCORE-ETH LP token</legend>
                               <div>
                                 <br>Amount In ETH.......: <input type="text" id="zap-eth-amount" class="tui-input white-168 black-text" onchange="getZapEstimate(document.getElementById('zap-eth-amount').value)" value="0.00000" style="width: 135px" />
                                 <button class="tui-button cyan-168" onclick="zapMax()">MAX</button>
@@ -149,14 +168,14 @@
                           </div>
                       </td>
                       <td width="40%" class="center">
-                        KZap ETH > HDCORE/ETH LP
+                        HDZap your ETH to HDCORE LP token
                       </td>
                     </tr>
                     <tr>
                         <td width="25" height="650px">
-                            <p>This is a dApp that will convert half your ETH deposited into HDCORE. Then create LP tokens for you, and deposit it into the KVault to start earning HDCORE.</p>
-                            <p>It’s pretty neat - saving you time and gas. Please be aware that once you KZap your ETH into the LP tokens, you will not be about to unlock it.</p>
-                            <p>You are able to withdraw your LP tokens from the KVault. You will be able to sell them on Balancer and Uniswap provided there is liquidity available.</p>
+                            <p>This is a dApp that will convert half your ETH deposited into HDCORE. Then create LP tokens for you, and deposit it into the HDVault to start earning HDCORE.</p>
+                            <p>HDZAP saves you time and gas .</p>
+                            <p>You are able to withdraw your LP tokens from the HDVault. You will be able to sell them on Balancer and Uniswap provided there is liquidity available.</p>
                         </td>
                     </tr>
                  </tbody>
@@ -171,7 +190,7 @@
                       <td rowspan="2" width="60%" class="blue-168-text">
                         <div class="tui-window purple-167" style="margin: 10px;">
                           <fieldset class="tui-fieldset">
-                            <legend class="center">DAI KPool 01</legend>
+                            <legend class="center">DAI HDPool 01</legend>
                             <br>APY (daily) %.......: [<span>APY Discovery</span>]
                             <br>
                             <br>APY (weekly) %......: [<span>APY Discovery</span>]
@@ -205,7 +224,7 @@
                   </tr>
                   <tr>
                       <td width="25" height="650px">
-                          <p>HDPools provide a variety of profit strategy pools to earn interest. When you stake your tokens in the HDPools you will earn the deflationary asset $HDCORE.</p>
+                          <p>By staking DAI token in a HDPool, you are simultaneously earning and providing buy pressure while enjoying minimal risk exposure and Impermanent Loss.HDPools provide a variety of profit strategy pools to earn interest. When you stake your tokens in the HDPools you will earn the deflationary asset $HDCORE.</p>
                           <p>The HDPools will utilise the interest earned to constantly buy HDCORE from the market. By staking in the HDPools you are providing buy pressure on the token you are earning.</p>
                           <p>Your earned HDCORE will be market ordered from your interest accrued and then claimed when you withdraw from the HDPool. Your total staked DAI balance represents the value of both your claimable HDCORE and DAI.</p>
                       </td>
@@ -225,7 +244,7 @@
                                   <legend class="center">HDCORE-ETH LGE</legend>
                                   <br>Time Remaining......: [<span id="countdown">00:00:00:00</span>]
                                   <br>
-                                  <br>Total $HDCORE Supply..: [<span>12,000</span>]
+                                  <br>Total $HDCORE Supply..: [<span>10,000</span>]
                                   <br>
                                   <br>ETH Deposited.......: [<span id="total-deposit">0.00000</span>]
                                   <br>
@@ -285,8 +304,8 @@
                     </tr>
                     <tr>
                         <td width="25" height="650px">
-                            <p>The HDCORE Liquidity Generation Event allows investors to contribute and lock their ETH. After the event is over, all contributed ETH will be deposited as liquidity to UniSwap.</p>
-                            <p>ETH depositors will be able to claim their share of LP tokens once the event has ended and liquidity has been added.</p>
+                            <p>The HDCORE Liquidity Generation Event allows investors to contribute and lock their ETH.LGE Contributor also receive HDCORE tokens of equal value to their contribution(LGE contributors get LP tokens + $HDCORE tokens for their support! You HARDCORE bruh) . After the event is over, all contributed ETH will be deposited as liquidity to UniSwap.</p>
+                            <p>ETH depositors will be able to claim their share of LP tokens and HDCORE tokens once the event has ended and liquidity has been added.</p>
                             <p>By depositing, you are agreeing that the team behind HDCORE is not responsible for your funds after the event is over.</p>
                             <p><a class="blue-255-text" href="#">Learn more about HDCORE</a></p>
                         </td>
@@ -306,11 +325,11 @@
         <div class="tui-statusbar absolute purple-167">
             <ul>
                 <li><a target="_blank" href="https://twitter.com/HDCOREvaults"><span class="white-255-text">Twitter</span></a></li>
-                <li><a target="_blank" href="https://medium.com/"><span class="white-255-text">Blog</span></a></li>
+                <li><a target="_blank" href="https://info.uniswap.org/token/0x3dde2e3a7d1b4e62d2e0cf5d16c9fee667d47551"><span class="white-255-text">Uniswap</span></a></li>
                 <li><a target="_blank" href="https://t.me/HARDCOREVAULTs"><span class="white-255-text">Telegram</span></a></li>
                 <li><a target="_blank" href="https://discord.gg/SUAzMh"><span class="white-255-text">Discord</span></a></li>
                 <li><a target="_blank" href="https://github.com/yieldbase"><span class="white-255-text">Github</span></a></li>
-                <li><a target="_blank" href="https://etherscan.io/token/0x63da3b945e86fe2d1fcaf4eb138474e934e2b94f"><span class="white-255-text">Contract</span></a></li>
+                <li><a target="_blank" href="https://etherscan.io/token/0x3DDE2e3a7d1B4e62d2e0Cf5d16C9FeE667d47551"><span class="white-255-text">Contract</span></a></li>
                 <span class="tui-datetime white-text" data-format="y/M/d H:m:s a"></span>
             </ul>
         </div>
