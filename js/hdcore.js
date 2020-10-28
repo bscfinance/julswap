@@ -10,26 +10,21 @@ let autoStakeOnZap = true;
 let LPbal;
 let LPrewards;
 
-// const daiAddress = `0x6B175474E89094C44Da98b954EedeAC495271d0F`
+// const routerAddress = '0x3D602Bc3d36FbD89E0cd16D0f0aA73E4da66Ba1A'
 // const kPoolDaiAddress = `0x3C1BC74E9f1e219e8F86bB2f79C37922b5f6Ca2c`
 
 // ============= Duplicate =================
-const HDCoreAddress = '0x63Da3b945e86FE2D1FCAf4eb138474E934E2B94f';
-const LPTokenAddress = '0xc7891dc691b0c03047e9415e7d4a75da76cd8297';
+const HDCoreAddress = '0x3DDE2e3a7d1B4e62d2e0Cf5d16C9FeE667d47551';
+const LPTokenAddress = '0x8dfd6f03580f8ee88587f4c051aab7193d7bdf8a';
 const HDVaultAddress = '0x4ec3BC3f1AD02Cb60cE08aFE88EeCacFE75A4a73';
-const HDCoreV2Address = '0xc502f897B8Fbc153775598ff5bF86DEB34668A09';
+const HDCoreV2Address = '0x47FDb27AD77aA44B93de5281f800911b6725D90F';
 const wethAddress = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2';
-const routerAddress = '0x3D602Bc3d36FbD89E0cd16D0f0aA73E4da66Ba1A';
+const routerAddress = '0x785fc58BF1e5461dA6192fC81CF9cB3C8e7e6928';
+const daiAddress = `0x6B175474E89094C44Da98b954EedeAC495271d0F`
+const hdPoolDaiAddress = `0x3C1BC74E9f1e219e8F86bB2f79C37922b5f6Ca2c`
 
-// The contract addresses and ABIs
-// const HDCoreAddress = '0xA866F0198208Eb07c83081d5136BE7f775c2399e'
-// const LPTokenAddress = '0xef035F52e5a8974adBF4380e020cD4A0A349C517'
-// const HDVaultAddress = '0xc48b627c9945b42De04f43f48E9c92B3B74BCEb9'
-// const HDCoreV2Address = '0xE5BeB064d95c440B067Acab01eA4f752B32F63a2'
-// const wethAddress = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'
-// const routerAddress = `0xcB8682d159Ae26CaedD115B2478700510c92B2b4`
 
-const eventEndTime = 1604113760000;
+const eventEndTime = 1603972166000;
 
 connect();
 
