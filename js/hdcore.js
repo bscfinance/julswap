@@ -10,8 +10,7 @@ let autoStakeOnZap = true;
 let LPbal;
 let LPrewards;
 
-// const routerAddress = '0x3D602Bc3d36FbD89E0cd16D0f0aA73E4da66Ba1A'
-// const kPoolDaiAddress = `0x3C1BC74E9f1e219e8F86bB2f79C37922b5f6Ca2c`
+
 
 // ============= Duplicate =================
 const HDCoreAddress = '0x3DDE2e3a7d1B4e62d2e0Cf5d16C9FeE667d47551';
@@ -21,7 +20,7 @@ const HDCoreV2Address = '0x47FDb27AD77aA44B93de5281f800911b6725D90F';
 const wethAddress = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2';
 const routerAddress = '0x785fc58BF1e5461dA6192fC81CF9cB3C8e7e6928';
 const daiAddress = `0x6B175474E89094C44Da98b954EedeAC495271d0F`;
-const hdPoolDaiAddress = `0x3C1BC74E9f1e219e8F86bB2f79C37922b5f6Ca2c`;
+const hdPoolDaiAddress = `0x1c2DB83744289BCE750855186448241AefC6Fd33`;
 
 const eventEndTime = 1603972166000;
 
