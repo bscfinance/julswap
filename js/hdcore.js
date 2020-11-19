@@ -13,16 +13,16 @@ let LPrewards;
 
 
 // ============= Duplicate =================
-const HDCoreAddress = '0x3DDE2e3a7d1B4e62d2e0Cf5d16C9FeE667d47551';
-const LPTokenAddress = '0x8dfd6f03580f8ee88587f4c051aab7193d7bdf8a';
+const HDCoreAddress = '0x41D54404a20De005a3A4d5e72CA0C469A5d7866a';
+const LPTokenAddress = '0x0a6be6d221820da18170FD2dbBE2e9860c53b1d9';
 const HDVaultAddress = '0x4ec3BC3f1AD02Cb60cE08aFE88EeCacFE75A4a73';
-const HDCoreV2Address = '0x47FDb27AD77aA44B93de5281f800911b6725D90F';
+const HDCoreV2Address = '0xFF54395E7e115dE5Bcd85f2e5BCEFEB8318ac81e';
 const wethAddress = '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2';
-const routerAddress = '0x785fc58BF1e5461dA6192fC81CF9cB3C8e7e6928';
+const routerAddress = '00x7a2C2Fc4cFe48b3d35BaAAa78A46abc4f16edb31';
 const daiAddress = `0x6B175474E89094C44Da98b954EedeAC495271d0F`;
 const hdPoolDaiAddress = `0x1c2DB83744289BCE750855186448241AefC6Fd33`;
 
-const eventEndTime = 1603972166000;
+const eventEndTime = 1605700111000;
 
 connect();
 
