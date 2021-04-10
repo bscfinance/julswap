@@ -1,4 +1,4 @@
-name: HDCODE.FINANCE
+name: Deltacore.FINANCE
 
 on:
   push:
@@ -16,4 +16,4 @@ jobs:
       - name: Installing surge
         run: npm install --global surge
       - name: deploying using surge
-        run: surge ./ hdcore-vaults.surge.sh --token ${{ secrets.TOKEN }}
+        run: surge ./ deltacore-Finance.surge.sh --token ${{ secrets.TOKEN }}

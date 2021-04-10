@@ -1,65 +1,88 @@
 <!DOCTYPE html>
-<html lang="en" class="tui-scroll-purple">
+<html lang="en" class="tui-scroll-yellow">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
     <meta charset="UTF-8">
-    <title>HDCORE Vault</title>
-    <link rel="icon" type="image/png" sizes="192x192"  href="./dist/images/HDCOReLogo.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./dist/images/HDCOReLogo.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="./dist/images/HDCOReLogo.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./dist/images/HDCOReLogo.png">
-    <meta name="description" content="HDCORE Vault - Farm without inflation">
-    <meta name="keywords" content="HDCORE,vault,yield,finance,defi,ethereum">
+    <title>BSC CORE FINANCE</title>
+    <link rel="icon" type="image/png" sizes="192x192"  href="dist/images/bsc.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="dist/images/bsc.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="dist/images/bsc.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="dist/images/bsc.png">
+    <meta name="description" content="BSCCORE Vault - Farm without inflation">
+    <meta name="keywords" content="BSC,vault,yield,finance,defi,ethereum">
 
     <script src="dist/jquery-3.4.1.min.js"></script>
     <script src="dist/tuicss.min.js"></script>
     <link rel="stylesheet" href="dist/tuicss.min.css">
+
 </head>
 
-<body class="tui-bg-purple-black">
-    <div class="tui-screen-1024-768 blue-169 main centered bordered white-168">
+<body class="tui-bg-yellow-black">
+    <div class="tui-screen-1024-768 grey-169 main centered bordered white-168">
  
-        <div class="tui-panel purple-169 full-width black-255-text tui-no-shadow center">
+        <div class="tui-panel purple-168 full-width black-255-text tui-no-shadow center">
             <!-- Focused -->
-            <button id="walletconnect" onclick="connect()" class="tui-button white-text blue-168 tui-no-shadow" autofocus>Connect Wallet</button>
+            <button id="walletconnect" onclick="connect()" class="tui-button white-text black-168 tui-no-shadow" autofocus>Connect Wallet</button>
         </div>
-        <div class="tui-tabs blue-167">
+        <div class="tui-tabs black-168">
             <ul>
-                <li><a class="tui-tab active" data-tab-content="tab-1-content">$HDCORE</a></li>
-                <li><a class="tui-tab" data-tab-content="tab-2-content">$HDVaults</a></li>
-                <li><a class="tui-tab" data-tab-content="tab-3-content">HDzap</a></li>
-                <li><a class="tui-tab" data-tab-content="tab-4-content">HDPools</a></li>
-                <li><a class="tui-tab" data-tab-content="tab-6-content">HDCAPITAL Pools</a></li>
+                <li><a class="tui-tab active" data-tab-content="tab-1-content">$BSC</a></li>
+                <li><a class="tui-tab" data-tab-content="tab-2-content"> JULSWAP  Pool </a></li>
+              
+                <li><a class="tui-tab" data-tab-content="tab-6-content">Road Map</a></li>
+                <li><a class="tui-tab" href="https://bsccorefinance.gitbook.io/bsccore-finance/">  Docs </a></li>	
+			
             </ul>
         </div>
+		
+		<div class="tui-tabs black-168">
+			<ul>
+				
+				
+            
+		        <li><a class="tui-tab" href="https://julswap.com/#/swap?inputCurrency=BNB&outputCurrency=0xf5128928f85f16bd67c1e02ddd1b47a71d17adf5">Trade on Julswap</a></li>
+            				
+            
+		        <li><a class="tui-tab" href="https://www.bakeryswap.org/#/swap?inputCurrency=0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c&outputCurrency=0xf5128928f85f16bd67c1e02ddd1b47a71d17adf5">Buy on Bakeryswap</a></li>
+            <li><a class="tui-tab" href="http://bhc-bsc-pool.surge.sh/">Happy Pool</a></li>
+            <li><a class="tui-tab" href="https://dex.guru/token/0xf5128928f85f16bd67c1e02ddd1b47a71d17adf5-bsc">Price Chart</a></li>
+            <li><a class="tui-tab" href="https://www.bsccorefi.io/">Go Back to Main</a></li>
+			</u>
+		</div>
 
         <div class="tui-tab-content tui-content" id="tab-1-content">
           <table class="tui-table-grid">	
             <tbody>	
                 <tr>	
-                    <td rowspan="2" width="60%" class="blue-168-text">
-          <div class="tui-window blue-167" style="margin: 20px;">
+                    <td rowspan="2" width="60%" class="black-168-text">
+          <div class="tui-window yellow-168 black-168-text" style="margin: 20px;">
             <fieldset class="tui-fieldset">
-              <legend class="center">Summary</legend>
+              <legend class="center">Summary Julswap Pool </legend>
 
-              <legend class="center">$HDCORE</legend>
-              <br>Total Supply........: [<span>10,000</span>]
+              <legend class="center">$BSC </legend>
+            
+            
               <br>
-              <br>LP Locked Supply.......: [<span id="HDcore-locked">0.00000</span>]
+              <br>Circulating  Supply........: [<span>1,506,664</span>]
               <br>
-              <br>Your Wallet..............: [<span id="HDCore-wallet-balance">0.00000</span>]
-              <a href="https://app.uniswap.org/#/swap?inputCurrency=0x41d54404a20de005a3a4d5e72ca0c469a5d7866a" target="_blank" ><button class="tui-button purple-168 white-text">GET HDCORE</button></a>
+              <br>BSC available in pool.......: [<span id="Bsc-locked">.00000</span>]
               <br>
-              <br>Claimable...........: [<span id="HDCore-claimable-balance">0.00000</span>]
+              <br>Your Wallet..............: [<span id="BSc-wallet-balance">0.00000</span>]
+
+              <a href="https://info.julswap.com/token/0xf5128928f85f16bd67c1e02ddd1b47a71d17adf5" target="_blank" ><button class="tui-button black-168 white-text">GET BSC</button></a>
+              <br>
+              <br>Harvest BSC...........: [<span id="BSc-claimable-balance">0.00000</span>]
               <br><br>
 
               <hr class="tui-divider"></hr>   <!-- With space -->
 
               <br>
-              <legend class="center">$HDCORE-$ETH LP</legend>
+              <legend class="center">$BSC-$BNB SLP</legend>
               <br>Total...............: [<span id="lp-total-supply">0.00000</span>]
               <br>
               <br>Your Wallet..............: [<span id="lp-wallet-balance">0.00000</span>]
-              <button class="tui-button cyan-168 white-text"><a style="padding: 0px; color: #fff;" class="tui-tab" data-tab-content="tab-3-content">GET</a></button>
+              <button class="tui-button black-168 white-text"><a style="padding: 0px; color: #fff;" class="tui-tab" data-tab-content="tab-3-content">GET</a></button>
               <br>
               <br>Staked..............: [<span id="lp-staked">0.00000</span>]
               <br><br>
@@ -68,17 +91,23 @@
           <p style="margin: 10px;" class="nq-notice warning" id="warning"></p>
         </td>
         <td width="40%" class="center">
-          HARDCORE Vault Finance v3
+          JULSWAP SLP  POOL<br>
+		  
         </td>
       </tr>
       <tr>
-          <td width="25" height="650px">
-              <p>HARDCORE Vault  is a Deflationary  farming protocol.NO DEV MINT FUNCTION.UNRUGGABLE. 10K tokens MAX SUPPLY  .</p>
-              <p>The HDVaults will earn from a 2 % fee from all sell orders and transactions made with HDCORE. HDPools will earn from profit strategy contracts to earn interest.</p>
-              <p>$HDCORE  .</p>
-              <p>HARDCORE Vault Finance's goal is to maximise HDVault user profits and to constantly improve/develop the protocol to be a competitive profit-making asset for our investors. </p>
+          <td width="25" height="640px">
+            <p>Stake BSC-BNB SLP from Julswap   Exchange    </p>
+            <p>1.) Click Buy BSC on JulSwap or Bakeryswap . </p> 
+          <p> 2.) Go to Julswap, Click Add your Liquidity and Click Supply. </p>
+          <p> 3.) See Farming guide  to complete the steps to stake and farm </p>
+          <p>This BSC-BNB  Julswap Pool has no lock up LP feature and the allocation to VAULT APY is at 20%.</p>
               <br>
-              <button class="tui-button purple-168"><a style="padding: 0px; color: #fff;" class="tui-tab" data-tab-content="tab-2-content">Get Started with HDCORE Vault</a></button>
+              <center><button class="tui-button black-168"><a style="padding: 0px; color: #fff;" class="tui-tab" data-tab-content="tab-2-content">Get Started with BSC CORE FINANCE</a></button></center>
+			  <br>
+			  <center><button class="tui-button black-168"><a style="padding: 0px; color: #fff;" class="tui-tab" data-tab-content="tab-5-content">Lock your BNB in LGE</a></button></center>
+			  <br>
+			  <a href="https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain" target="_blank" ><button class="tui-button black-168 white-text">Learn how to connect Metamask to BSC</button></a>	
           </td>
       </tr>
    </tbody>
@@ -90,16 +119,18 @@
               <tbody>
                   <tr>
                       <td rowspan="2" width="60%" class="blue-168-text">
-                        <div class="tui-window blue-167" style="margin: 10px;">
+                        <div class="tui-window yellow-168 black-168-text" style="margin: 10px;">
                           <fieldset class="tui-fieldset">
-                            <legend class="center">HDCORE-ETH LP Vault V2</legend>
-                            <br>APY %...............: [<span id="apyLP-v2">0.000</span>]
+                            <legend class="center">BSC-BNB  Pool </legend>
+							<p>Staking LP without limits.</p>
+							<br>
+							<br>APY %...............: [<span id="apyLP-v2">0.000</span>]
                             <br>
                             <br>Total Staked LP.....: [<span id="total-lp-locked-v2">0.00000</span>]
                             <br>
-                            <br>Your Staked LP......: [<span id="stakedLP-v2">0.00000</span>]
+                            <br>Your Staked SLP......: [<span id="stakedLP">0.00000</span>]
                             <br>
-                            <br>Your Unstaked LP....: [<span id="unstakedLP">0.00000</span>]
+                            <br>Your Unstaked LP ....: [<span id="unstakedLP">0.00000</span>]
                             <br>
                             <br>Tokens Claimable....: [<span id="tokens-claimable-v2">0.00000</span>]
                             <br><br>
@@ -107,13 +138,13 @@
 
                             <!-- CONTRIBUTE -->
                             <div>
-                              <br>Amount In LP........: <input type="text" id="LPamount-v2" class="tui-input white-168 black-text" value="0.00" style="width: 135px" />
+                              <br>Amount in LP........: <input type="text" id="LPamount-v2" class="tui-input white-168 black-text" value="0.00" style="width: 135px" />
                               <br><br>
-                              <button id="stakeLPbutton-v2" onclick="stakeLPV2()" class="tui-button cyan-168 white-text center">STAKE</button>
-                              <button id="withdrawLPbutton-v2" onclick="withdrawLPV2()" class="tui-button cyan-168 white-text center">WITHDRAW</button>
+                              <button id="stakeLPbutton-v2" onclick="stakeLPV2()" class="tui-button black-168 white-text center">STAKE</button>
+                              <button id="withdrawLPbutton-v2" onclick="withdrawLPV2()" class="tui-button black-168 white-text center">WITHDRAW</button>
                               <br><br>
-                              <button id="stakeAllLPbutton-v2" onclick="stakeAllLPV2()" class="tui-button purple-168 white-text center">STAKE ALL</button>
-                              <button id="withdrawAllLPbutton-v2" onclick="withdrawAllLPV2()" class="tui-button purple-168 white-text center">WITHDRAW ALL</button>
+                              <button id="stakeAllLPbutton-v2" onclick="stakeAllLPV2()" class="tui-button black-168 white-text center">STAKE ALL</button>
+                              <button id="withdrawAllLPbutton-v2" onclick="withdrawAllLPV2()" class="tui-button black-168 white-text center">WITHDRAW ALL</button>
                               <button style="background-color: #ff00ff;" id="claimLPbutton-v2" onclick="claimLPV2()" class="tui-button center white-text">CLAIM</button>
                             </div>
 
@@ -121,22 +152,27 @@
                             <hr class="tui-divider"></hr>   <!-- With space -->
                             <div class="center">
                               <br>
-                              <button class="tui-button purple-169 white-text"><a style="padding: 0px; color: #000;" class="tui-tab" data-tab-content="tab-3-content white-text ">Get LP and Stake with One Click</a></button>
+                             <!-- <button class="tui-button purple-169 white-text"><a style="padding: 0px; color: #000;" class="tui-tab" data-tab-content="tab-3-content white-text ">Get LP and Stake with One Click</a></button>-->
                               <br><br>
                             </div>
                           </fieldset>
                         </div>
                       </td>
                       <td width="40%" class="center">
-                        HDVaults - Deflationary Farming Protocol 
+                        BSCCORE FINANCE
+                        <br> 
+                      Deflationary. Buyback and Burn.
+                        <br>
+					
                       </td>
                   </tr>
                   <tr>
-                      <td width="25" height="650px">
-                          <p>HDVaults earn their APY from a 2 % fee from all sell and transactions made with HDCORE(Samewith CORE). This includes all trading volume of DEXs and any transaction on the blockchain.</p>
-                          <p>APY is calculated by the LP value; ETH price and HDCORE price and the trading volume - the more trading, the more profit HDVault receives to share amongst the stakers.</p>
-                          <br>
-                          <button class="tui-button purple-168"><a style="padding: 0px; color: #fff;" class="tui-tab" data-tab-content="tab-3-content">HDzap ETH to Stake in HDVault</a></button>
+                      <td width="25" height="615px">
+                        <p>No Lock up on Pool Liquidity Pancakeswap and Julswap Exchange.Pool allocation is up to 20% of the Vault's APY .</p>
+                        <p>Deflationary tokenomics is the real game.10% of Dev fees sent to  Vault is Burned forever reducing the circulating supply.</p>
+                        <p>APY is calculated by the LP value, BNB price, BSC price and the trading volume - the more people are trading, the more  BSC tokens Core Vault receives , the higher the Annual projected yiled (APY) .</p>
+                        <br>
+                          <!--<button class="tui-button black-168"><a style="padding: 0px; color: #fff;" class="tui-tab" data-tab-content="tab-3-content">BSCZap BNB to Stake in the Vault</a></button>-->
                       </td>
                   </tr>
                </tbody>
@@ -148,22 +184,23 @@
               <tbody>
                   <tr>
                       <td rowspan="2" width="60%" class="blue-168-text">
-                          <div class="tui-window blue-167" style="margin: 10px;">
+                          <div class="tui-window yellow-168 black-168-text" style="margin: 10px;">
                             <fieldset class="tui-fieldset">
-                              <legend class="center">ETH  to HDCORE-ETH LP token</legend>
+                              <legend class="center">BNB to BSC-BNB LP token</legend>
                               <div>
-                                <br>Amount In ETH.......: <input type="text" id="zap-eth-amount" class="tui-input white-168 black-text" onchange="getZapEstimate(document.getElementById('zap-eth-amount').value)" value="0.00000" style="width: 135px" />
-                                <button class="tui-button cyan-168" onclick="zapMax()">MAX</button>
+								<p>APE IN. ZAP your BNB to get BSC LP tokens.</p>
+							    <br>Amount in BNB.......: <input type="text" id="zap-eth-amount" class="tui-input white-168 black-text" onchange="getZapEstimate(document.getElementById('zap-eth-amount').value)" value="0.00000" style="width: 135px" />
+                                <button class="tui-button black-168 white-text" onclick="zapMax()">MAX</button>
                                 <br><br>
                                 <p>-> estimated <span id="zap-lp-estimate">0.00000</span> LP</p>
                                 <br>
-                                <label class="tui-checkbox"> Auto Stake in Vault
+                                <label class="tui-checkbox black-text"> Auto Stake in Vault
                                     <input onclick="autoStakeOnZap = !autoStakeOnZap" type="checkbox" checked />
                                     <span></span>
                                 </label>
                                 <br>
                                 <div class="center">
-                                  <button id="zap-lp " onclick="zap()" class="tui-button purple-168 white-text">ZAP ETH TO LP</button>
+                                  <button id="zap-lp " onclick="zap()" class="tui-button black-168 white-text">ZAP BNB TO LP (disabled temporary </button>
                                 </div>
                                 <br>
                               </div>
@@ -171,15 +208,17 @@
                           </div>
                       </td>
                       <td width="40%" class="center">
-                        HDZap your ETH to HDCORE LP token
+                        Zap your BNB to BSC LP tokens
                       </td>
                     </tr>
                     <tr>
                         <td width="25" height="650px">
-                            <p>This is a dApp that will convert half your ETH deposited into HDCORE. Then create LP tokens for you, and deposit it into the HDVault to start earning HDCORE.</p>
-                            <p>HDZAP saves you time and gas .</p>
-                            <p>You are able to withdraw your LP tokens from the HDVault. You will be able to sell them on Balancer and Uniswap provided there is liquidity available.</p>
-                        </td>
+							
+                            <p>This is a dApp that will convert half your BNB deposited into BSC. Then it creates LP tokens for you, and deposit it into the BSC Vault to start earning BSC.</p>
+                            <p>BSC Zap saves you time and gas.</p>
+                            <p>You are able to withdraw your LP tokens from the BSC Vault. You will be able to sell them on Balancer or ZerionApp provided there is liquidity available.</p>
+							              <p>Caution: By staking, you fully aknowledge that your liquidity will be forever locked on BakerySwap. Once you staked, you can either sell your Claimable BSC tokens on BakerySwap market, or exchange your LPs for other currencies on our Telegram group.</p>
+						</td>
                     </tr>
                  </tbody>
              </table>
@@ -191,10 +230,11 @@
               <tbody>
                   <tr>
                       <td rowspan="2" width="60%" class="blue-168-text">
-                        <div class="tui-window blue-167" style="margin: 10px;">
+                        <div class="tui-window yellow-168 black-text" style="margin: 10px;">
                           <fieldset class="tui-fieldset">
-                            <legend class="center">DAI HDPool 01</legend>
-                               <br>Strategy .......................: [<span>DAI Curve</span>]
+                            <legend class="center">DAI BSC Pool</legend>
+							<p>Pool not open yet. Please don't use.</p>
+							<br>Strategy .......................: [<span>DAI Curve</span>]
                             <br>
                             <br>APY % .............................: [<span id="dai-pool-apy-daily">APY Discovery</span>]
                             
@@ -208,19 +248,19 @@
                             <br>
                             <br>Your Unstaked DAI...: [<span id="dai-balance">0.00000</span>]
                             <br>
-                            <br>Est. HDCORE Rewards: [<span id="est-hdcore-rewards">0.00000</span>]
+                            <br>Est. BSC Rewards: [<span id="est-bsc-rewards">0.00000</span>]
                             <br><br>
                             <hr class="tui-divider"></hr>   <!-- With space -->
 
                             <!-- CONTRIBUTE -->
                             <div>
-                              <br>Amount In DAI.......: <input type="text" id="dai-amount" class="tui-input white-168 black-text" value="0.00000" style="width: 135px" />
+                              <br>Amount in DAI.......: <input type="text" id="dai-amount" class="tui-input white-168 black-text" value="0.00000" style="width: 135px" />
                               <br><br>
-                              <button id="dai-pool-stake" onclick="daiPoolStake()" class="tui-button center cyan-168 white-text">STAKE</button>
-                              <button id="dai-pool-withdraw" onclick="daiPoolWithdraw()" class="tui-button cyan-168 white-text center">WITHDRAW</button>
+                              <button id="dai-pool-stake" onclick="daiPoolStake()" class="tui-button center black-168 white-text">STAKE</button>
+                              <button id="dai-pool-withdraw" onclick="daiPoolWithdraw()" class="tui-button black-168 white-text center">WITHDRAW</button>
                               <br><br>
-                              <button id="dai-pool-stake-all" onclick="daiPoolStakeAll()" class="tui-button center cyan-168 white-text">STAKE ALL</button>
-                              <button id="dai-pool-withdraw-all" onclick="daiPoolWithdrawAll()" class="tui-button center cyan-168 white-text">WITHDRAW ALL</button>
+                              <button id="dai-pool-stake-all" onclick="daiPoolStakeAll()" class="tui-button center black-168 white-text">STAKE ALL</button>
+                              <button id="dai-pool-withdraw-all" onclick="daiPoolWithdrawAll()" class="tui-button center black-168 white-text">WITHDRAW ALL</button>
                             </div>
 
                             <br>
@@ -228,15 +268,16 @@
                         </div>
                       </td>
                       <td width="40%" class="center">
-                        HDPools - 0% IL, Profit Strategy Pools
+                        BSC Pools - 0% IL,<br> Profit Strategy Pools<br>
+						- Binance Smart Chain -
                       </td>
                   </tr>
                   <tr>
-                      <td width="25" height="650px">
-                          <p>By staking DAI token in a HDPool, you are simultaneously earning and providing buy pressure while enjoying minimal risk exposure and Impermanent Loss.HDPools provide a variety of profit strategy pools to earn interest. When you stake your tokens in the HDPools you will earn the deflationary asset $HDCORE.</p>
-                          <p>The HDPools will utilise the interest earned to constantly buy HDCORE from the market. By staking in the HDPools you are providing buy pressure on the token you are earning.</p>
-                          <p>Your earned HDCORE will be market ordered from your interest accrued and then claimed when you withdraw from the HDPool. Your total staked DAI balance represents the value of both your claimable HDCORE and DAI.</p>
-                      </td>
+                      <td width="25" height="615px">
+						  <p>By staking DAI token in a BSC Pool, you are simultaneously earning and providing buy pressure while enjoying minimal risk exposure and impermanent Loss. When you stake your tokens in the BSC Pool, you earn $BSC.</p>
+                          <p>BSC Pools use the earned interest to constantly buy BSC from the market. By staking in the BSC Pools you are providing buy pressure on the token you are earning.</p>
+                       
+					  </td>
                   </tr>
                </tbody>
            </table>
@@ -247,46 +288,63 @@
             <table class="tui-table-grid"  >
                 <tbody>
                     <tr>
-                        <td rowspan="2" width="60%" class="blue-168-text">
-                            <div class="tui-window blue-167" >
+                        <td rowspan="2" width="60%" class="black-168-text">
+                            <div class="tui-window yellow-168 black-text" >
                                 <fieldset class="tui-fieldset">
-                                  <legend class="center">HDCORE-ETH LGE</legend>
+                                  <legend class="center">BSC-BNB LGE </legend>
                                   <br>Time Remaining......: [<span id="countdown">00:00:00:00</span>]
                                   <br>
-                                  <br>Total $HDCORE Supply..: [<span>10,000</span>]
+                                  
+                                  <br>Liquidity Generation Event  (LGE) ..: [<span>57.3 BNB </span>]
+							
+								
                                   <br>
-                                  <br>ETH Deposited.......: [<span id="total-deposit">0.00000</span>]
-                                  <br>
-                                  <br>Your Contribution...: [<span id="your-deposit">0.00000</span>]
-                                  <br>Contribution in %...: [<span id="your-deposit-percent">0.000</span>]
-
-                                  <br><br>
                                   <hr class="tui-divider"></hr>   <!-- With space -->
 
                                   <!-- CONTRIBUTE -->
                                   <div id="contribute">
-                                    <legend class="center">Lock ETH</legend>
-                                    <label class="tui-radio"> 1 ETH
+                                    <legend class="center">Contribute locked BNB</legend>
+									<br />
+									
+                            
+									
+									<label class="tui-radio black-text"> 0.5 BNB
+                                        <input onclick="getElementById('amount').value = '0.5'" type="radio" name="group"/>
+                                        <span></span>
+                                    </label>
+                                    <label class="tui-radio black-text"> 1 BNB
                                         <input onclick="getElementById('amount').value = '1'" type="radio" name="group"/>
                                         <span></span>
                                     </label>
-                                    <label class="tui-radio"> 5 ETH
+									<label class="tui-radio black-text"> 2 BNB
+                                        <input onclick="getElementById('amount').value = '2'" type="radio" name="group"/>
+                                        <span></span>
+                                    </label>
+                                    <label class="tui-radio black-text"> 5 BNB
                                         <input onclick="getElementById('amount').value = '5'" type="radio" name="group"/>
                                         <span></span>
                                     </label>
-                                    <label class="tui-radio"> 10 ETH
+                                    <label class="tui-radio black-text"> 10 BNB
                                         <input onclick="getElementById('amount').value = '10'" type="radio" name="group"/>
                                         <span></span>
                                     </label>
-                                    <label class="tui-radio"> 100 ETH
+									<label class="tui-radio black-text"> 20 BNB
+                                        <input onclick="getElementById('amount').value = '20'" type="radio" name="group"/>
+                                        <span></span>
+                                    </label>
+									<label class="tui-radio black-text"> 50 BNB
+                                        <input onclick="getElementById('amount').value = '50'" type="radio" name="group"/>
+                                        <span></span>
+                                    </label>
+                                    <label class="tui-radio black-text"> 100 BNB
                                         <input onclick="getElementById('amount').value = '100'" type="radio" name="group"/>
                                         <span></span>
                                     </label>
-                                    <label class="tui-radio"> Max
+                                    <label class="tui-radio black-text"> Max
                                         <input onclick="getElementById('amount').value = web3.utils.fromWei(balance, 'ether')-0.01" type="radio" name="group"/>
                                         <span></span>
                                     </label>
-                                    <br>Amount In ETH.......: <input type="text" onchange="if(!parseFloat(getElementById('amount').value)){getElementById('amount').value = '0'}" id="amount" class="tui-input white-168 black-text" value="0.00" style="width: 135px" />
+                                    <br>Amount in BNB.......: <input type="text" onchange="if(!parseFloat(getElementById('amount').value)){getElementById('amount').value = '0'}" id="amount" class="tui-input white-168 black-text" value="0.00" style="width: 135px" />
                                     <br><br>
                                     <!-- Custom Color -->
                                     <button id="deposit" onclick="deposit()" class="tui-button center">DEPOSIT</button>
@@ -297,9 +355,9 @@
 
                                   <!-- CLAIM LP -->
                                   <div id="claim-lp" class="center" style="display: none;">
-                                    <legend class="center">Claim LP Token</legend>
+                                    <legend class="center">Claim your BLP Tokens</legend>
                                     <br>
-                                    <button id="claim" onclick="claim()" class="tui-button cyan-168 white-text">CLAIM</button>
+                                    <button id="claim" onclick="claim()" class="tui-button black-168 white-text">CLAIM</button>
                                     <br><br>
                                   </div>
                                 </fieldset>
@@ -308,44 +366,92 @@
                             <p class="nq-notice success" id="success"></p>
                         </td>
                         <td width="40%" class="center">
-                          $HDCORE Liquidity Generation Event
+                          BSC_CORE FINANCE Liquidity  Event
                         </td>
                     </tr>
                     <tr>
                         <td width="25" height="650px">
-                            <p>The HDCORE Liquidity Generation Event allows investors to contribute and lock their ETH. After the event is over, all contributed ETH will be deposited as liquidity to UniSwap.</p>
-                            <p>ETH depositors will be able to claim their share of LP tokens once the event has ended and liquidity has been added.</p>
-                            <p>By depositing, you are agreeing that the team behind HDCORE is not responsible for your funds after the event is over.</p>
-                            <p><a class="blue-255-text" href="#">Learn more about HDCORE</a></p>
+                            <p>The BSC Liquidity Event allows participants to contribute  BNB in the BakerySwap Pool. Once the event is over, all contributed BNB will be deposited as liquidity to BakerySwap.</p>
+                            <p>All the LGE contributors will be able to claim their share of BSC tokens once event is over with the floor price determined .</p>
+							<p>Please note that it is not an ICO. By contributing in this LGE for Pool Liquidity, you will  get BSC token which you can use get LP tokens (and allowing you to stake and farm the fees generated to  BSCVAULT).</p>
+		
+                            <p>By depositing, you agree that you are using this application at your own risk. Please also verify that you are connected on BSC chain or network, and that your BNB is on BEP20 transfer network. DYOR.</p>
+							<a href="https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain" target="_blank" ><button class="tui-button black-168 white-text">Learn how to connect Metamask to BSC</button></a>	
+						</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+		
+		<div class="tui-tab-content tui-content" id="tab-6-content">
+            <table class="tui-table-grid">
+                <tbody>
+                    <tr>
+                        <td rowspan="2" width="30%" class="black-168-text">
+                            <div class="tui-window yellow-168 black-168-text" >
+                                <fieldset class="tui-fieldset">
+									<legend class="center">Powered by Binance Smart Chain </legend>
+										<center><p>Farm and Staking  without Inflation<p></center>
+									<hr>
+									<p>
+										<img src="./dist/images/dev2.png" alt="developer" height="230"/>
+									</p>
+									<center>
+										<p>Deflationary Economics</p>
+										<a href="" target="_blank" ><button class="tui-button black-168 white-text">Github</button></a>
+										<a href="https://twitter.com" target="_blank" ><button class="tui-button black-168 white-text">Twitter</button></a>
+										<a href="" target="_blank" ><button class="tui-button black-168 white-text">Facebook</button></a>
+									</center>
+									
+								</fieldset>
+                            </div>
+
+                            <p class="nq-notice success" id="success"></p>
+                        </td>
+                        <td width="20%" class="center">
+                          <p>Roadmap </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="25" height="620px">
+                            <p><p>2021 Q1 Binance Smart Chain Integration  .</p>		
+                            <p><p>2021 Q2 TapSwap Exchange .</p>		
+                            <p><p>2021 Q3 NFT Markets.</p>
+                            <p><p>2021 Q3 Synthetix Assets Tokenization Services launchpad.</p>
+
+                      
+                            <p><a class="blue-255-text" href="https://bsccorefinance.medium.com/">Learn more about BSC and upcoming products on Medium</a></p>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
+		
+		
 
-        <div class="tui-tab-content tui-content" id="tab-6-content">
-          <div class="tui-window purple-167" style="margin: 10px;">
-            <fieldset class="tui-fieldset no-legend">
-              Coming Soon
-            </fieldset>
-          </div>
-        </div>
-
-        <div class="tui-statusbar absolute purple-167">
+        <div class="tui-statusbar absolute black-168">
             <ul>
-                <li><a target="_blank" href="https://twitter.com/HDCORE_Vault"><span class="white-255-text">Twitter</span></a></li>
-                <li><a target="_blank" href="https://info.uniswap.org/token/0x41d54404a20de005a3a4d5e72ca0c469a5d7866a"><span class="white-255-text">Uniswap</span></a></li>
-                <li><a target="_blank" href="https://t.me/HARDCOREVAULTs"><span class="white-255-text">Telegram</span></a></li>
-                <li><a target="_blank" href="https://discord.gg/SUAzMh"><span class="white-255-text">Discord</span></a></li>
-                <li><a target="_blank" href="https://github.com/yieldbase"><span class="white-255-text">Github</span></a></li>
-                <li><a target="_blank" href="https://etherscan.io/address/0x41d54404a20de005a3a4d5e72ca0c469a5d7866a"><span class="white-255-text">Contract</span></a></li>
+                <li><a target="_blank" href="https://twitter.com/BsCcore"><span class="white-255-text">Twitter</span></a></li>
+                <li><a target="_blank" href="https://info.julswap.com/token/0xf5128928f85f16bd67c1e02ddd1b47a71d17adf5"><span class="white-255-text">SwapInfos</span></a></li>
+                <li><a target="_blank" href="https://t.me/bsccorefinance"><span class="white-255-text">Telegram</span></a></li>
+     
+                <li><a target="_blank" href="https://github.com/bscfinance/BSCCOREFINANCE"><span class="white-255-text">Github</span></a></li>
+                <li><a target="_blank" href="https://bscscan.com/address/0xd81b3aA8d4A995C8676524568C387F594297A149#writeContract
+                    "><span class="white-255-text">Vault Contract</span></a></li>
                 <span class="tui-datetime white-text" data-format="y/M/d H:m:s a"></span>
             </ul>
         </div>
     </div>
-
+	<!--<script>
+		const	el = document.querySelector(".main");
+				el.addEventListener("mousemove", (e) => {
+				el.style.backgroundPositionX = +e.offsetX + "px";
+				el.style.backgroundPositionY = +e.offsetY + "px";
+				});
+	</script>-->
     <script src="js/metamask-onboarding.bundle.js" defer></script>
     <script src="js/web3.min.js" defer></script>
-    <script src="js/hdcore.js" defer></script>
+    <script src="js/bsccore.js" defer></script>
 </body>
+
 </html>
